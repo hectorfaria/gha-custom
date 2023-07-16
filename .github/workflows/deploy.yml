@@ -59,15 +59,9 @@ jobs:
           path: ./dist
       - name: Output contents
         run: ls
-      - name: install deps
-        run: npm ci
-        working-directory: ./.github/actions/deploy-s3-js
-      - name: Convert the TS file to simple JS
-        run: npm run build
-        working-directory: ./.github/actions/deploy-s3-js
       - name: Deploy site
         id: deploy
-        uses: ./.github/actions/deploy-s3-js
+        uses: ./.github/actions/deploy-s3-docker
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWSS_ACCESS_KEY_PASS }}
