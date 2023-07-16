@@ -73,7 +73,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWSS_ACCESS_KEY_PASS }}
         with:
           bucket: ${{ secrets.BUCKET }}
-          dist-folder: ./dist'
+          dist-folder: ./dist
       - name: Output information
         run: |
           "echo "URL: ${{ steps.deploy.outputs.website-url }}""
