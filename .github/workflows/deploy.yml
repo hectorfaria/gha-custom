@@ -66,8 +66,5 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: Convert the TS file to simple JS
-        run: npm run build
-        working-directory: ./.github/actions/deploy-s3-js
       - name: run custom action
         uses: ./.github/actions/deploy-s3-js
