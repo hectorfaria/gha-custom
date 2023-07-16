@@ -63,7 +63,12 @@ jobs:
         run: echo "Deploying..."
   information:
     runs-on: ubuntu-latest
-    steps:                              
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: install deps
+        run: npm ci
+        working-directory: ./.github/actions/deploy-s3-js
       - name: Convert the TS file to simple JS
         run: npm run build
         working-directory: ./.github/actions/deploy-s3-js
