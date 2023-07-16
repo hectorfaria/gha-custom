@@ -76,5 +76,5 @@ jobs:
           dist-folder: ./dist
       - name: Output information
         run: |
-          "echo "URL: ${{ steps.deploy.outputs.website-url }}""
+          echo "URL: ${{ steps.deploy.outputs.website-url }}"
         
